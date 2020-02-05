@@ -59,11 +59,29 @@ Once the dependencies are installed without any errors, your machine is now prep
 ```
 streamlit run app.py
 ```
+After running the streamlit, you'll find the following ip address
+
+```
+You can now view your Streamlit app in your browser.
+
+  Network URL: http://172.31.41.84:8501
+  External URL: http://18.224.200.50:8501
+```
 
 3. Open the app on the browser
 
 
-Now you can go to a browser and type the external URL to access your app. In my case the address is http://35.167.158.251:8501. Here is the output. This app will be up right now if you want to play with it.
+Now you can go to a browser and type the external URL to access your app. In my case the address is http://18.224.200.50:8501. Here is the output. This app will be up right now if you want to play with it.
 
 
- 
+4. Run Streamlit in the background
+
+
+
+5. Associate domain to Amazon EC2 instance (Optional)
+
+If you want to associate a domain to your Amazon EC2 instance (so that you don't carry around with this <ip_address>:<8501>), then you can use [Namecheap]. Here are the brief instructions
+
+
+
+https://u.osu.edu/walujo.1/2016/07/07/associate-namecheap-domain-to-amazon-ec2-instance/
