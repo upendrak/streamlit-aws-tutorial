@@ -6,19 +6,15 @@ It's a simple application that is currently using Stream as the front-end. I wil
 
 > Before you deploy your Streamlit app, make sure it works locally
 
-1. Launch a Amazon EC2 instance using free tier
+- Launch a Amazon EC2 instance using free tier
 
-2. Clone this github repo ont Ec2 instance
+- Install all the required libraries/packages
 
-3. Install all the requirements
+- Run the Streamlit app
 
-4. Run the Streamlit app in the background
+- Open the app on the browser
 
-5. Open the app on the browser
-
-6. Point your NAMECHEAP domain name to your AWS EC2 Linux instance
-
-7. There is no step 7
+- Point your NAMECHEAP domain name to your AWS EC2 Linux instance
 
 1. Launch an Amazon EC2 instance
 
@@ -30,4 +26,44 @@ It's a simple application that is currently using Stream as the front-end. I wil
 
 - In the first step, you need to choose the AMI template for the machine. I select the 18.04 Ubuntu Server since it is applicable for the Free Tier. And Ubuntu.
 
-- 
+- In the second step, I select the t2.micro instance as again it is the one which is eligible for the free tier. As you can see t2.micro is just a single CPU instance with 512 MB RAM. You can opt for a bigger machine if you are dealing with a powerful model or are willing to pay.
+
+- Keep pressing Next until you reach the “6. Configure Security Group” tab. You will need to add a rule with Type: “Custom TCP Rule”, Port Range:8501, and Source: MyIP. We use the port 8501 here since it is the custom port used by Streamlit.
+
+- You can click on “Review and Launch” and finally on the “Launch” button to launch the instance. Once you click on Launch you might need to create a new key pair
+
+- You can now go to your instances to see if your instance has started. Hint: See the Instance state, it should be showing “Running”
+
+- Select your instance, and copy the Public DNS(IPv4) Address from the description. It should be something starting with ec2.
+
+2. Install all the packages/dependencies
+
+After all the above steps you should be able to see the ubuntu prompt for the virtual machine. We will need to set up this machine to run our app. I am going to be using this app for the demonstration purposes
+
+```
+$ git clone https://github.com/upendrak/streamlit-aws-tutorial.git
+$ cd streamlit-aws-tutorial
+```
+
+```
+$ sudo apt update
+$ sudo apt get install -y python3-pip
+$ pip3 install -r requirements.txt
+$ export PATH=~/.local/bin/:$PATH
+```
+
+Once the dependencies are installed without any errors, your machine is now prepped and ready to run.
+
+- Running Streamlit on Amazon ec2
+
+```
+streamlit run app.py
+```
+
+3. Open the app on the browser
+
+
+Now you can go to a browser and type the external URL to access your app. In my case the address is http://35.167.158.251:8501. Here is the output. This app will be up right now if you want to play with it.
+
+
+ 
