@@ -80,6 +80,4 @@ You can use 'screen' or 'tmux' to run streamlit in the background
 
 5. Associate domain to Amazon EC2 instance (Optional)
 
-If you want to associate a domain to your Amazon EC2 instance (so that you don't carry around with this <ip_address>:<8501>), then you can use [Namecheap](https://www.namecheap.com/). Here are the brief instructions
-
-https://u.osu.edu/walujo.1/2016/07/07/associate-namecheap-domain-to-amazon-ec2-instance/
+If you want to associate a domain to your Amazon EC2 instance (so that you don't carry around with this <ip_address>:<8501>), then you can use [Namecheap](https://www.namecheap.com/). Here are the brief [instructions](https://u.osu.edu/walujo.1/2016/07/07/associate-namecheap-domain-to-amazon-ec2-instance/) 
