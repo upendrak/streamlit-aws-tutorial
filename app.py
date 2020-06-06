@@ -6,14 +6,6 @@ import plotly_express as px
 st.markdown("<h1 style='text-align: left; color: green;'>Club and Nationality App</h1>", unsafe_allow_html=True)
 st.write("")
 
-st.markdown(
-	"""
-
-	This very simple webapp allows you to select and visualize players from certain clubs and certain nationalities
-
-	"""
-	)
-
 @st.cache
 def load_data():
 	df = pd.read_csv("football_data.csv")
@@ -39,4 +31,14 @@ if clubs and nationalities is not None:
 		fig = px.scatter(new_df, x ='Overall',y='Age', color='Name')
 		st.plotly_chart(fig)
 	else:
-		st.markdown("### No player with that combination was found!!!")
+		# st.markdown("### No player with that combination was found!!!")
+		st.markdown(
+		"""
+
+		This very simple webapp allows you to select and visualize players from certain clubs and certain nationalities
+
+		👈 Select one or more clubs and nationalities
+
+		"""
+		)
+
